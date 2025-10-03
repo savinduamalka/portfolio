@@ -3,6 +3,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Certificate } from 'crypto';
+import { ParticleSection } from '@/components/ParticleSection';
 
 const achievements = [
   {
@@ -83,7 +84,7 @@ export function Achievements() {
   };
 
   return (
-    <section id="achievements" className="py-20 relative">
+    <ParticleSection id="achievements" className="py-20" variant="minimal" opacity={1}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -151,23 +152,6 @@ export function Achievements() {
                           View
                         </Button>
                       )}
-                      {achievement.link && (
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          asChild
-                          className="flex-1"
-                        >
-                          <a
-                            href={achievement.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="h-3 w-3 mr-1" />
-                            View
-                          </a>
-                        </Button>
-                      )}
                     </div>
                   </div>
                 </Card>
@@ -211,6 +195,6 @@ export function Achievements() {
           </div>
         </div>
       </div>
-    </section>
+    </ParticleSection>
   );
 }

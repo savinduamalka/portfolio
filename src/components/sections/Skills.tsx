@@ -13,6 +13,7 @@ import {
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { ParticleSection } from '@/components/ParticleSection';
 
 const skillCategories = [
   {
@@ -236,7 +237,7 @@ export function Skills() {
       : skillCategories.filter((cat) => cat.category === activeFilter);
 
   return (
-    <section id="skills" className="py-20 relative">
+    <ParticleSection id="skills" className="py-20" variant="default" opacity={1}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -319,6 +320,6 @@ export function Skills() {
           </div>
         </div>
       </div>
-    </section>
+    </ParticleSection>
   );
 }

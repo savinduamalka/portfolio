@@ -2,6 +2,7 @@ import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ParticleSection } from "@/components/ParticleSection";
 
 const blogs = [
   {
@@ -81,7 +82,7 @@ export function Blogs() {
   const otherBlogs = blogs.filter((blog) => !blog.featured);
 
   return (
-    <section id="blogs" className="py-20 relative">
+    <ParticleSection id="blogs" className="py-20" variant="colorful" opacity={1}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -220,6 +221,6 @@ export function Blogs() {
           </div>
         </div>
       </div>
-    </section>
+    </ParticleSection>
   );
 }

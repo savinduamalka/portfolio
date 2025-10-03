@@ -1,6 +1,7 @@
 import { GraduationCap, Award, Calendar } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ParticleSection } from "@/components/ParticleSection";
 
 const education = [
   {
@@ -30,7 +31,7 @@ const education = [
 
 export function Education() {
   return (
-    <section id="education" className="py-20 relative">
+    <ParticleSection id="education" className="py-20" variant="minimal" opacity={1}>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
@@ -100,6 +101,6 @@ export function Education() {
           </div>
         </div>
       </div>
-    </section>
+    </ParticleSection>
   );
 }

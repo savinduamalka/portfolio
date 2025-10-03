@@ -1,6 +1,7 @@
 import { Heart, Users, Calendar, MapPin } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ParticleSection } from "@/components/ParticleSection";
 
 const volunteering = [
   {
@@ -17,7 +18,7 @@ const volunteering = [
 
 export function Volunteering() {
   return (
-    <section id="volunteering" className="py-20 relative">
+    <ParticleSection id="volunteering" className="py-20" variant="minimal" opacity={1}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -125,6 +126,6 @@ export function Volunteering() {
           </div>
         </div>
       </div>
-    </section>
+    </ParticleSection>
   );
 }

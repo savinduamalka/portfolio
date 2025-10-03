@@ -37,7 +37,7 @@ export function Hero() {
   };
 
   const summaryText =
-    'Enthusiastic and fast-learning IT undergraduate with a strong academic record, actively seeking an Internship to gain hands-on industry experience and apply foundational technical skills in a real-world setting. Proficient in core technologies including Linux, Docker, Git, and cloud platforms, alongside programming expertise and collaborative project work, with a keen interest in web technologies and emerging IT trends. Demonstrates adaptability, dedication, and a proactive approach to learning new tools, contributing effectively to team environments while supporting automation, CI/CD, and infrastructure management processes.';
+    'Enthusiastic and fast-learning IT undergraduate with a strong academic record, actively seeking an Internship to gain hands-on industry experience and apply foundational technical skills in a real-world setting. Proficient in core technologies including Linux, Docker, Git, and cloud platforms, alongside programming expertise and collaborative project work, with a keen interest in web technologies and emerging IT trends.';
 
   const handleViewCV = () => {
     // Open CV in new tab for viewing
@@ -69,7 +69,7 @@ export function Hero() {
       </div>
 
       {/* Particle Network */}
-      <ParticleBackground />
+      <ParticleBackground variant="colorful" interactive={true} opacity={1} />
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">

@@ -1,6 +1,7 @@
 import { Briefcase, Calendar, MapPin } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ParticleSection } from "@/components/ParticleSection";
 
 const experiences = [
   {
@@ -16,7 +17,7 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section id="experience" className="py-20 relative">
+    <ParticleSection id="experience" className="py-20" variant="minimal" opacity={1}>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
@@ -99,6 +100,6 @@ export function Experience() {
           </div>
         </div>
       </div>
-    </section>
+    </ParticleSection>
   );
 }

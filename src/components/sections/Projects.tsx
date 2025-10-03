@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/dialog';
 import { profile } from 'console';
 import { title } from 'process';
+import { ParticleSection } from '@/components/ParticleSection';
 
 const projects = [
   {
@@ -138,7 +139,7 @@ export function Projects() {
   });
 
   return (
-    <section id="projects" className="py-20 relative">
+    <ParticleSection id="projects" className="py-20" variant="dense" opacity={1}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -360,6 +361,6 @@ export function Projects() {
           )}
         </DialogContent>
       </Dialog>
-    </section>
+    </ParticleSection>
   );
 }

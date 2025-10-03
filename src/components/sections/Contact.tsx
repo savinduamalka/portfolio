@@ -3,6 +3,7 @@ import { Mail, Copy, Send, CheckCircle } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { ParticleSection } from "@/components/ParticleSection";
 
 const CONTACT_EMAIL = "savinduamalka@gmail.com"; 
 
@@ -21,7 +22,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
+    <ParticleSection id="contact" className="py-20" variant="colorful" opacity={1}>
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           {/* Section Header */}
@@ -125,6 +126,6 @@ export function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </ParticleSection>
   );
 }
