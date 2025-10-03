@@ -105,7 +105,7 @@ export function Hero() {
         {/* Centered Content */}
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           {/* Greeting */}
-          <div className="mb-8 animate-slide-up">
+          <div className="mb-8 animate-slide-up pt-20 lg:pt-0">
             <span className="inline-flex items-center gap-3 px-6 py-3 glass rounded-full text-2xl md:text-3xl font-semibold text-primary glow-primary">
               <span
                 className="inline-block animate-wave text-3xl md:text-4xl"
