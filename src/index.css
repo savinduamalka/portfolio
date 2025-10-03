@@ -196,7 +196,7 @@ All colors MUST be HSL.
   }
 
   .animate-letter-wave {
-    animation: letter-wave 3s ease-in-out infinite;
+    animation: letter-wave 8s ease-in-out infinite;
     display: inline-block;
   }
 
@@ -242,25 +242,33 @@ All colors MUST be HSL.
   }
 
   @keyframes letter-wave {
-
-    0%,
-    40%,
-    100% {
+    0% {
       transform: translateY(0) scale(1);
       color: hsl(var(--muted-foreground));
     }
 
-    10%,
-    30% {
+    5% {
       transform: translateY(-8px) scale(1.1);
       color: hsl(var(--primary));
       text-shadow: 0 0 20px hsla(var(--glow-primary), 0.6);
     }
 
-    20% {
+    10% {
       transform: translateY(-12px) scale(1.15);
       color: hsl(var(--neon-secondary));
       text-shadow: 0 0 25px hsla(var(--glow-secondary), 0.8);
+    }
+
+    15% {
+      transform: translateY(-8px) scale(1.1);
+      color: hsl(var(--primary));
+      text-shadow: 0 0 20px hsla(var(--glow-primary), 0.6);
+    }
+
+    20%,
+    100% {
+      transform: translateY(0) scale(1);
+      color: hsl(var(--muted-foreground));
     }
   }
 

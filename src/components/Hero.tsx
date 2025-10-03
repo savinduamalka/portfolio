@@ -4,20 +4,22 @@ import { ParticleBackground } from './ParticleBackground';
 import heroSpaceBg from '@/assets/hero-space-bg.jpg';
 
 export function Hero() {
-  // Function to split text into words and letters for animation
   const animateText = (text: string) => {
     const words = text.split(' ');
     let letterIndex = 0;
+    const letters = text.replace(/ /g, '').length; 
 
     return words.map((word, wordIdx) => {
-      const letters = word.split('').map((letter, letterIdx) => {
+      const wordLetters = word.split('').map((letter, letterIdx) => {
         const currentIndex = letterIndex++;
+        const animationDelay = (currentIndex / letters) * 8; 
+
         return (
           <span
             key={`${wordIdx}-${letterIdx}`}
             className="inline-block animate-letter-wave"
             style={{
-              animationDelay: `${currentIndex * 0.05}s`,
+              animationDelay: `${animationDelay}s`,
             }}
           >
             {letter}
@@ -27,7 +29,7 @@ export function Hero() {
 
       return (
         <span key={wordIdx} className="inline-block">
-          {letters}
+          {wordLetters}
           {wordIdx < words.length - 1 && <span>&nbsp;</span>}
         </span>
       );
@@ -136,7 +138,7 @@ export function Hero() {
 
           {/* Summary */}
           <div
-            className="text-base md:text-lg mb-10 max-w-3xl mx-auto animate-slide-up relative"
+            className="text-base md:text-lg mb-10 max-w-7xl mx-auto animate-slide-up relative"
             style={{ animationDelay: '0.4s' }}
           >
             {/* Animated cosmic background glow */}
