@@ -14,7 +14,7 @@ const education = [
     {
     degree: "Chartered Accountant (CA)",
     institution: "Institute of Chartered Accountants of Sri Lanka (ICASL)",
-    period: "2022 - Now",
+    period: "2022 - Present",
     achievements: ["Price Winner"],
     description: "Completed Business Level 1 & 2, Reading Corporate Level",
   },
