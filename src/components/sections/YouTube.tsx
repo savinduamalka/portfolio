@@ -1,58 +1,65 @@
-import { Play, Eye, ThumbsUp, Calendar } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ParticleSection } from "@/components/ParticleSection";
+import { Play, Eye, ThumbsUp, Calendar } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { ParticleSection } from '@/components/ParticleSection';
 
 const videos = [
   {
-    title: "Introduction to Cloud Computing in Sinhala - Cloud Computing මුල සිට",
-    description: "Comprehensive introduction to cloud computing concepts and services in Sinhala.",
-    videoId: "qjbOGPp6lW0&t=117s", 
-    thumbnail: "https://i.ytimg.com/an_webp/qjbOGPp6lW0/mqdefault_6s.webp?du=3000&sqp=CPOogMcG&rs=AOn4CLCAlUESbpCnlh3d7987K6n0PzT89w",
-    date: "2025-08-29",
-    duration: "8:57",
-    views: "33",
-    likes: "4",
-    tags: ["Cloud Computing", "Cloud Concepts", "Tutorial", "Sinhala"],
+    title:
+      'Introduction to Cloud Computing in Sinhala - Cloud Computing මුල සිට',
+    description:
+      'Comprehensive introduction to cloud computing concepts and services in Sinhala.',
+    videoId: 'qjbOGPp6lW0&t=117s',
+    thumbnail:
+      'https://i.ytimg.com/an_webp/qjbOGPp6lW0/mqdefault_6s.webp?du=3000&sqp=CPOogMcG&rs=AOn4CLCAlUESbpCnlh3d7987K6n0PzT89w',
+    date: '2025-08-29',
+    duration: '8:57',
+    views: '33',
+    likes: '4',
+    tags: ['Cloud Computing', 'Cloud Concepts', 'Tutorial', 'Sinhala'],
     featured: true,
   },
   {
-    title: "Management Information System (MIS)- Lesson 1 - Part 1",
-    description: "Detailed overview of Management Information Systems (MIS) and their role in organizations.",
-    videoId: "XbFsJXxxux4", 
-    thumbnail: "https://img.youtube.com/vi/XbFsJXxxux4/maxresdefault.jpg",
-    date: "2025-09-11",
-    duration: "27:44",
-    views: "636",
-    likes: "12",
-    tags: ["MIS", "Management Information System", "Information Systems"],
+    title: 'Management Information System (MIS)- Lesson 1 - Part 1',
+    description:
+      'Detailed overview of Management Information Systems (MIS) and their role in organizations.',
+    videoId: 'XbFsJXxxux4',
+    thumbnail: 'https://img.youtube.com/vi/XbFsJXxxux4/maxresdefault.jpg',
+    date: '2025-09-11',
+    duration: '27:44',
+    views: '636',
+    likes: '12',
+    tags: ['MIS', 'Management Information System', 'Information Systems'],
     featured: false,
   },
   {
-    title: "Management Information System (MIS)- Lesson 2 - Part 1",
-    description: "In-depth exploration of MIS components, types, and their impact on business operations.",
-    videoId: "ZLeNYiw4c-I&t=1043s", 
-    thumbnail: "https://img.youtube.com/vi/ZLeNYiw4c-I/maxresdefault.jpg",
-    date: "2025-09-12",
-    duration: "01:01:41",
-    views: "430",
-    likes: "11",
-    tags: ["MIS", "Management Information System", "Information Systems"],
+    title: 'Management Information System (MIS)- Lesson 2 - Part 1',
+    description:
+      'In-depth exploration of MIS components, types, and their impact on business operations.',
+    videoId: 'ZLeNYiw4c-I&t=1043s',
+    thumbnail: 'https://img.youtube.com/vi/ZLeNYiw4c-I/maxresdefault.jpg',
+    date: '2025-09-12',
+    duration: '01:01:41',
+    views: '430',
+    likes: '11',
+    tags: ['MIS', 'Management Information System', 'Information Systems'],
     featured: false,
   },
   {
-    title: "Introduction to AWS | සිංහලෙන් | Beginner Friendly Guide",
-    description: "Beginner-friendly introduction to Amazon Web Services (AWS) in Sinhala.",
-    videoId: "RR2WsOAgA7Y&t=6s", 
-    thumbnail: "https://i.ytimg.com/an_webp/RR2WsOAgA7Y/mqdefault_6s.webp?du=3000&sqp=CN6kgMcG&rs=AOn4CLCfUMGjkc751GIPQG0Sv_yqrwRLyA",
-    date: "2025-08-30",
-    duration: "08:54",
-    views: "35",
-    likes: "3",
-    tags: ["AWS", "Amazon Web Services", "Cloud Computing", "Sinhala"],
+    title: 'Introduction to AWS | සිංහලෙන් | Beginner Friendly Guide',
+    description:
+      'Beginner-friendly introduction to Amazon Web Services (AWS) in Sinhala.',
+    videoId: 'RR2WsOAgA7Y&t=6s',
+    thumbnail:
+      'https://i.ytimg.com/an_webp/RR2WsOAgA7Y/mqdefault_6s.webp?du=3000&sqp=CN6kgMcG&rs=AOn4CLCfUMGjkc751GIPQG0Sv_yqrwRLyA',
+    date: '2025-08-30',
+    duration: '08:54',
+    views: '35',
+    likes: '3',
+    tags: ['AWS', 'Amazon Web Services', 'Cloud Computing', 'Sinhala'],
     featured: false,
-  }
+  },
 ];
 
 export function YouTube() {
@@ -60,11 +67,16 @@ export function YouTube() {
   const otherVideos = videos.filter((video) => !video.featured);
 
   const openVideo = (videoId: string) => {
-    window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
+    window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
   };
 
   return (
-    <ParticleSection id="youtube" className="py-20" variant="default" opacity={1}>
+    <ParticleSection
+      id="youtube"
+      className="py-20"
+      variant="default"
+      opacity={1}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -94,7 +106,10 @@ export function YouTube() {
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition-colors">
                     <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center glow-box-primary group-hover:scale-110 transition-transform">
-                      <Play className="h-10 w-10 text-white ml-1" fill="white" />
+                      <Play
+                        className="h-10 w-10 text-white ml-1"
+                        fill="white"
+                      />
                     </div>
                   </div>
                   {/* Duration Badge */}
@@ -116,7 +131,9 @@ export function YouTube() {
                     ))}
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-3">{featuredVideo.title}</h3>
+                  <h3 className="text-2xl font-bold mb-3">
+                    {featuredVideo.title}
+                  </h3>
                   <p className="text-muted-foreground mb-4">
                     {featuredVideo.description}
                   </p>
@@ -124,11 +141,14 @@ export function YouTube() {
                   <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
                     <span className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
-                      {new Date(featuredVideo.date).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      })}
+                      {new Date(featuredVideo.date).toLocaleDateString(
+                        'en-US',
+                        {
+                          month: 'short',
+                          day: 'numeric',
+                          year: 'numeric',
+                        }
+                      )}
                     </span>
                     <span className="flex items-center gap-1">
                       <Eye className="h-4 w-4" />
@@ -209,9 +229,9 @@ export function YouTube() {
                     </span>
                     <span className="flex items-center gap-1">
                       <Calendar className="h-3 w-3" />
-                      {new Date(video.date).toLocaleDateString("en-US", {
-                        month: "short",
-                        year: "numeric",
+                      {new Date(video.date).toLocaleDateString('en-US', {
+                        month: 'short',
+                        year: 'numeric',
                       })}
                     </span>
                   </div>

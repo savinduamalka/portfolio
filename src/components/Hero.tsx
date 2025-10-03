@@ -7,12 +7,12 @@ export function Hero() {
   const animateText = (text: string) => {
     const words = text.split(' ');
     let letterIndex = 0;
-    const letters = text.replace(/ /g, '').length; 
+    const letters = text.replace(/ /g, '').length;
 
     return words.map((word, wordIdx) => {
       const wordLetters = word.split('').map((letter, letterIdx) => {
         const currentIndex = letterIndex++;
-        const animationDelay = (currentIndex / letters) * 8; 
+        const animationDelay = (currentIndex / letters) * 8;
 
         return (
           <span

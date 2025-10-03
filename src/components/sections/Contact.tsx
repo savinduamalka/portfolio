@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { Mail, Copy, Send, CheckCircle } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
-import { ParticleSection } from "@/components/ParticleSection";
+import { useState } from 'react';
+import { Mail, Copy, Send, CheckCircle } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
+import { ParticleSection } from '@/components/ParticleSection';
 
-const CONTACT_EMAIL = "savinduamalka@gmail.com"; 
+const CONTACT_EMAIL = 'savinduamalka@gmail.com';
 
 export function Contact() {
   const [copied, setCopied] = useState(false);
@@ -13,7 +13,7 @@ export function Contact() {
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(CONTACT_EMAIL);
     setCopied(true);
-    toast.success("Email copied to clipboard!");
+    toast.success('Email copied to clipboard!');
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -22,7 +22,12 @@ export function Contact() {
   };
 
   return (
-    <ParticleSection id="contact" className="py-20" variant="colorful" opacity={1}>
+    <ParticleSection
+      id="contact"
+      className="py-20"
+      variant="colorful"
+      opacity={1}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           {/* Section Header */}
@@ -31,7 +36,8 @@ export function Contact() {
               Get In Touch
             </h2>
             <p className="text-muted-foreground">
-              Feel free to reach out for collaborations, opportunities, or just to say hi!
+              Feel free to reach out for collaborations, opportunities, or just
+              to say hi!
             </p>
           </div>
 
@@ -88,17 +94,35 @@ export function Contact() {
             {/* Divider */}
             <div className="my-8 flex items-center gap-4">
               <div className="flex-1 h-px bg-border" />
-              <span className="text-sm text-muted-foreground">or connect on</span>
+              <span className="text-sm text-muted-foreground">
+                or connect on
+              </span>
               <div className="flex-1 h-px bg-border" />
             </div>
 
             {/* Social Links */}
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                { name: "LinkedIn", url: "https://www.linkedin.com/in/savindu-amalka-698317235", color: "#0077B5" },
-                { name: "GitHub", url: "https://github.com/savinduamalka", color: "#333" },
-                { name: "Medium", url: "https://medium.com/@savinduamalka", color: "#00AB6C" },
-                { name: "YouTube", url: "https://youtube.com/@savinduamalka", color: "#FF0000" },
+                {
+                  name: 'LinkedIn',
+                  url: 'https://www.linkedin.com/in/savindu-amalka-698317235',
+                  color: '#0077B5',
+                },
+                {
+                  name: 'GitHub',
+                  url: 'https://github.com/savinduamalka',
+                  color: '#333',
+                },
+                {
+                  name: 'Medium',
+                  url: 'https://medium.com/@savinduamalka',
+                  color: '#00AB6C',
+                },
+                {
+                  name: 'YouTube',
+                  url: 'https://youtube.com/@savinduamalka',
+                  color: '#FF0000',
+                },
               ].map((social) => (
                 <Button
                   key={social.name}

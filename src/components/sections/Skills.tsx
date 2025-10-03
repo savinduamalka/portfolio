@@ -237,7 +237,12 @@ export function Skills() {
       : skillCategories.filter((cat) => cat.category === activeFilter);
 
   return (
-    <ParticleSection id="skills" className="py-20" variant="default" opacity={1}>
+    <ParticleSection
+      id="skills"
+      className="py-20"
+      variant="default"
+      opacity={1}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

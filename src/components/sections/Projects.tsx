@@ -35,9 +35,8 @@ const projects = [
       'Hotel booking web application with room search, booking management, and user authentication.',
     longDescription:
       'Built a hotel booking platform with secure auth, real-time room availability, booking management, hotel galleries, user reviews, subscription, and an admin panel for managing rooms, reservations, pricing, and users.',
-    tags: ['MERN', 'Github Actions', 'EC2', 'nginx','Supabase'],
-    image:
-      '/bluehorizon.png',
+    tags: ['MERN', 'Github Actions', 'EC2', 'nginx', 'Supabase'],
+    image: '/bluehorizon.png',
     github: 'https://github.com/savinduamalka/Hotel-Management-front-end.git',
     demo: 'https://www.bluehorizongalle.app/',
     category: 'Full-Stack',
@@ -49,8 +48,7 @@ const projects = [
     longDescription:
       'Developed a full-stack e-commerce platform for the automobile sector with secure auth, category-based product browsing, cart & checkout, order tracking, and an admin dashboard for managing users, products, and orders.',
     tags: ['Laravel', 'React', 'Docker', 'My SQL'],
-    image:
-      '/automobilesl.png',
+    image: '/automobilesl.png',
     github: 'https://github.com/savinduamalka/E-Commerce-backend-laravel.git',
     demo: 'https://e-commerce-frontend-ruddy-ten.vercel.app/',
     category: 'Full-Stack',
@@ -62,8 +60,7 @@ const projects = [
     longDescription:
       'Built a web-based system to manage employees and tender documents, featuring secure authentication, dynamic employee filtering, profile management, automated matching of employees to tender requirements and user settings for profile updates.',
     tags: ['Next JS', 'PostgreSQL', 'Prisma', 'Docker', 'Minio'],
-    image:
-      '/mit.png',
+    image: '/mit.png',
     github: 'https://github.com/savinduamalka/database-middleware-system.git',
     demo: 'https://drive.google.com/drive/folders/1gVkUSUmnfv9i3KaGupRBagcXTOP_CFIv?usp=drive_link',
     category: 'Full-Stack',
@@ -75,8 +72,7 @@ const projects = [
     longDescription:
       'Developed an Arduino-based automated bartender system with precision tray positioning, glass detection, and interactive recipe customization. Integrated motorized axis control, real-time notifications, and auto-reset for smooth and reliable operation.',
     tags: ['C++', 'Arduino', 'Motor Control', 'Input reading Sensors'],
-    image:
-      '/bartender.jpeg',
+    image: '/bartender.jpeg',
     github: 'https://github.com/savinduamalka/Automated-Cocktail-Machine.git',
     demo: 'https://drive.google.com/drive/folders/117Wkj9VoflUf7XEeaCrpSDuz4EhjsbW0?usp=drive_link',
     category: 'IoT',
@@ -96,9 +92,11 @@ const projects = [
   },
   {
     title: 'Portfolio Website',
-    description: 'A personal portfolio website to showcase projects and skills.',
-    longDescription: 'Features include a project gallery, skill showcase, and contact form.',
-    tags: ["React", "Tailwind CSS", "Vercel"],
+    description:
+      'A personal portfolio website to showcase projects and skills.',
+    longDescription:
+      'Features include a project gallery, skill showcase, and contact form.',
+    tags: ['React', 'Tailwind CSS', 'Vercel'],
     image: '/portfolio.png',
     github: 'https://github.com/savinduamalka/portfolio.git',
     demo: '',
@@ -106,14 +104,16 @@ const projects = [
   },
   {
     title: 'Spirit11',
-    description: 'Admin Credentials: Username: savinduamalka, Password: Savindu@123.',
-    longDescription: 'Developed a real-time fantasy sports web app for a hackathon, featuring admin and user panels with role-based authentication. The system includes player stats management, team selection with budget tracking, dynamic leaderboard, and live updates across both interfaces.',
+    description:
+      'Admin Credentials: Username: savinduamalka, Password: Savindu@123.',
+    longDescription:
+      'Developed a real-time fantasy sports web app for a hackathon, featuring admin and user panels with role-based authentication. The system includes player stats management, team selection with budget tracking, dynamic leaderboard, and live updates across both interfaces.',
     tags: ['Node', 'React', 'MongoDB'],
     image: '/vertex.png',
     github: 'https://github.com/savinduamalka/SpiritX_Vertex_02.git',
     demo: 'https://spirit-x-vertex-02.vercel.app',
     category: 'AI/ML',
-  }
+  },
 ];
 
 const categories = ['All', 'Full-Stack', 'Frontend', 'Backend', 'IoT'];
@@ -139,7 +139,12 @@ export function Projects() {
   });
 
   return (
-    <ParticleSection id="projects" className="py-20" variant="dense" opacity={1}>
+    <ParticleSection
+      id="projects"
+      className="py-20"
+      variant="dense"
+      opacity={1}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

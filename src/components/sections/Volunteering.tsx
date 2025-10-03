@@ -1,24 +1,32 @@
-import { Heart, Users, Calendar, MapPin } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ParticleSection } from "@/components/ParticleSection";
+import { Heart, Users, Calendar, MapPin } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { ParticleSection } from '@/components/ParticleSection';
 
 const volunteering = [
   {
-    organization: "Fit Moments",
-    role: "Photographer",
-    period: "2023 Sep - 2024 Oct",
-    location: "University of Moratuwa",
-    description: "Actively contributed to the Faculty Photography Club by organizing events, and capturing high-quality images for campus activities. Collaborated with team members to promote creativity and enhance club engagement. Developed skills in event planning, teamwork, and visual storytelling.",
-    impact: "Participated 5+ successful photography events, actively engaged in club activities",
-    tags: ["Photography", "Photo Editing", "Lightroom"],
-    image: "https://scontent.fcmb4-2.fna.fbcdn.net/v/t39.30808-6/535371835_1331316595670880_6532678813698774562_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_ohc=pHRENwerB7IQ7kNvwE-6egj&_nc_oc=AdmQUyS_uYnNLn64eISAhBIkNbEyJXlgh58PcU9B5_Xth_bj99_1Jz5Irc4u95fV4LTZ02hVfL1WjYosAEzQX79s&_nc_zt=23&_nc_ht=scontent.fcmb4-2.fna&_nc_gid=3kHwlmBZm7yWFPy7ZYZI8g&oh=00_AfecehrI6ONbsYx4nJmVOyhNjG3lXj_jvVUdUmvc2LSKZQ&oe=68E5D988",
-  }
+    organization: 'Fit Moments',
+    role: 'Photographer',
+    period: '2023 Sep - 2024 Oct',
+    location: 'University of Moratuwa',
+    description:
+      'Actively contributed to the Faculty Photography Club by organizing events, and capturing high-quality images for campus activities. Collaborated with team members to promote creativity and enhance club engagement. Developed skills in event planning, teamwork, and visual storytelling.',
+    impact:
+      'Participated 5+ successful photography events, actively engaged in club activities',
+    tags: ['Photography', 'Photo Editing', 'Lightroom'],
+    image:
+      'https://scontent.fcmb4-2.fna.fbcdn.net/v/t39.30808-6/535371835_1331316595670880_6532678813698774562_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_ohc=pHRENwerB7IQ7kNvwE-6egj&_nc_oc=AdmQUyS_uYnNLn64eISAhBIkNbEyJXlgh58PcU9B5_Xth_bj99_1Jz5Irc4u95fV4LTZ02hVfL1WjYosAEzQX79s&_nc_zt=23&_nc_ht=scontent.fcmb4-2.fna&_nc_gid=3kHwlmBZm7yWFPy7ZYZI8g&oh=00_AfecehrI6ONbsYx4nJmVOyhNjG3lXj_jvVUdUmvc2LSKZQ&oe=68E5D988',
+  },
 ];
 
 export function Volunteering() {
   return (
-    <ParticleSection id="volunteering" className="py-20" variant="minimal" opacity={1}>
+    <ParticleSection
+      id="volunteering"
+      className="py-20"
+      variant="minimal"
+      opacity={1}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -27,7 +35,8 @@ export function Volunteering() {
               Community & Volunteering
             </h2>
             <p className="text-muted-foreground">
-              Giving back to the tech community through education and open source
+              Giving back to the tech community through education and open
+              source
             </p>
           </div>
 
@@ -47,7 +56,7 @@ export function Volunteering() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
-                  
+
                   {/* Icon Overlay */}
                   <div className="absolute top-4 right-4 p-3 rounded-full glass glow-box-primary">
                     <Heart className="h-5 w-5 text-primary" />
@@ -109,15 +118,20 @@ export function Volunteering() {
           {/* Call to Action */}
           <div className="mt-12 text-center glass p-8 rounded-lg animate-slide-up">
             <Heart className="h-12 w-12 text-primary mx-auto mb-4 glow-box-primary" />
-            <h3 className="text-xl font-bold mb-2">Interested in Collaboration?</h3>
+            <h3 className="text-xl font-bold mb-2">
+              Interested in Collaboration?
+            </h3>
             <p className="text-muted-foreground mb-4">
-              I'm always looking for opportunities to contribute to meaningful projects and help others grow.
+              I'm always looking for opportunities to contribute to meaningful
+              projects and help others grow.
             </p>
             <a
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
-                document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                document
+                  .querySelector('#contact')
+                  ?.scrollIntoView({ behavior: 'smooth' });
               }}
               className="text-primary hover:underline font-medium"
             >

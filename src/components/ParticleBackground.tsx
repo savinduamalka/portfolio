@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 interface Particle {
   x: number;
@@ -18,11 +18,11 @@ interface ParticleBackgroundProps {
   opacity?: number;
 }
 
-export function ParticleBackground({ 
-  variant = 'default', 
+export function ParticleBackground({
+  variant = 'default',
   interactive = true,
   showConnections = true,
-  opacity = 0.8 
+  opacity = 0.8,
 }: ParticleBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
@@ -33,7 +33,7 @@ export function ParticleBackground({
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     // Responsive particle count based on variant
@@ -61,7 +61,10 @@ export function ParticleBackground({
           y: Math.random() * canvas.height,
           vx: (Math.random() - 0.5) * speed,
           vy: (Math.random() - 0.5) * speed,
-          radius: variant === 'minimal' ? Math.random() * 1.5 + 0.5 : Math.random() * 2 + 1,
+          radius:
+            variant === 'minimal'
+              ? Math.random() * 1.5 + 0.5
+              : Math.random() * 2 + 1,
           opacity: Math.random() * 0.5 + 0.5,
           hue: variant === 'colorful' ? Math.random() * 360 : 280, // Purple hue for default
           connections: 0,
@@ -83,7 +86,7 @@ export function ParticleBackground({
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Reset connection counts
-      particlesRef.current.forEach(p => p.connections = 0);
+      particlesRef.current.forEach((p) => (p.connections = 0));
 
       // Update and draw particles
       particlesRef.current.forEach((particle, i) => {
@@ -92,7 +95,7 @@ export function ParticleBackground({
           const dx = mouseRef.current.x - particle.x;
           const dy = mouseRef.current.y - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
-          
+
           if (distance < 200) {
             const force = (200 - distance) / 200;
             // Repulsion when very close, attraction when moderately close
@@ -144,22 +147,28 @@ export function ParticleBackground({
 
         // Draw particle with glow
         const gradient = ctx.createRadialGradient(
-          particle.x, particle.y, 0,
-          particle.x, particle.y, particle.radius * 3
+          particle.x,
+          particle.y,
+          0,
+          particle.x,
+          particle.y,
+          particle.radius * 3
         );
-        
-        const particleColor = variant === 'colorful' 
-          ? `hsl(${particle.hue}, 80%, 60%)`
-          : 'rgba(255, 255, 255, 0.9)';
-        
+
+        const particleColor =
+          variant === 'colorful'
+            ? `hsl(${particle.hue}, 80%, 60%)`
+            : 'rgba(255, 255, 255, 0.9)';
+
         gradient.addColorStop(0, particleColor);
         gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
 
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-        ctx.fillStyle = variant === 'colorful' 
-          ? `hsla(${particle.hue}, 80%, 60%, ${particle.opacity})`
-          : `rgba(255, 255, 255, ${particle.opacity * 0.8})`;
+        ctx.fillStyle =
+          variant === 'colorful'
+            ? `hsla(${particle.hue}, 80%, 60%, ${particle.opacity})`
+            : `rgba(255, 255, 255, ${particle.opacity * 0.8})`;
         ctx.fill();
 
         // Add glow
@@ -184,16 +193,16 @@ export function ParticleBackground({
               ctx.beginPath();
               ctx.moveTo(particle.x, particle.y);
               ctx.lineTo(otherParticle.x, otherParticle.y);
-              
+
               const lineOpacity = (1 - distance / maxDistance) * 0.4;
-              
+
               if (variant === 'colorful') {
                 const avgHue = (particle.hue + otherParticle.hue) / 2;
                 ctx.strokeStyle = `hsla(${avgHue}, 80%, 60%, ${lineOpacity})`;
               } else {
                 ctx.strokeStyle = `rgba(120, 24, 63, ${lineOpacity})`;
               }
-              
+
               ctx.lineWidth = variant === 'dense' ? 0.5 : 1;
               ctx.stroke();
 
@@ -216,11 +225,11 @@ export function ParticleBackground({
 
     resizeCanvas();
     initParticles();
-    window.addEventListener("resize", resizeCanvas);
-    window.addEventListener("resize", initParticles); // Reinit particles on resize
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', initParticles); // Reinit particles on resize
     if (interactive) {
-      window.addEventListener("mousemove", handleMouseMove);
-      canvas.addEventListener("mouseleave", handleMouseLeave);
+      window.addEventListener('mousemove', handleMouseMove);
+      canvas.addEventListener('mouseleave', handleMouseLeave);
     }
     animate();
 
@@ -234,16 +243,16 @@ export function ParticleBackground({
         animate();
       }
     };
-    document.addEventListener("visibilitychange", handleVisibilityChange);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
-      window.removeEventListener("resize", resizeCanvas);
-      window.removeEventListener("resize", initParticles);
+      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('resize', initParticles);
       if (interactive) {
-        window.removeEventListener("mousemove", handleMouseMove);
-        canvas.removeEventListener("mouseleave", handleMouseLeave);
+        window.removeEventListener('mousemove', handleMouseMove);
+        canvas.removeEventListener('mouseleave', handleMouseLeave);
       }
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }

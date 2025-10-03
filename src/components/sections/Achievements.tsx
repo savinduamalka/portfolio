@@ -84,7 +84,12 @@ export function Achievements() {
   };
 
   return (
-    <ParticleSection id="achievements" className="py-20" variant="minimal" opacity={1}>
+    <ParticleSection
+      id="achievements"
+      className="py-20"
+      variant="minimal"
+      opacity={1}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -158,7 +163,7 @@ export function Achievements() {
               );
             })}
           </div>
-                    {/* View All on LinkedIn Button */}
+          {/* View All on LinkedIn Button */}
           <div className="text-center mt-8 animate-fade-in">
             <Button variant="neon" asChild>
               <a

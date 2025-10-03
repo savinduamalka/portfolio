@@ -1,37 +1,42 @@
-import { GraduationCap, Award, Calendar } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ParticleSection } from "@/components/ParticleSection";
+import { GraduationCap, Award, Calendar } from 'lucide-react';
+import { Card } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { ParticleSection } from '@/components/ParticleSection';
 
 const education = [
   {
-    degree: "Bachelor of Science in Information Technology & Management",
-    institution: "University of Moratuwa",
-    period: "2023 August - 2027 July",
-    gpa: "3.82/4.0",
+    degree: 'Bachelor of Science in Information Technology & Management',
+    institution: 'University of Moratuwa',
+    period: '2023 August - 2027 July',
+    gpa: '3.82/4.0',
     achievements: ["Dean's List"],
-    description: "Focused on Software Engineering, AI, and IT",
-  },
-    {
-    degree: "Chartered Accountant (CA)",
-    institution: "Institute of Chartered Accountants of Sri Lanka (ICASL)",
-    period: "2022 - Present",
-    achievements: ["Price Winner"],
-    description: "Completed Business Level 1 & 2, Reading Corporate Level",
+    description: 'Focused on Software Engineering, AI, and IT',
   },
   {
-    degree: "Advanced Level",
-    institution: "Vidyaloka College - Galle",
-    period: "2019 - 2021",
-    gpa: "1.8764",
-    achievements: ["Top of Class", "Top of Section", "Subject Awards"],
-    description: "Commerce Stream",
+    degree: 'Chartered Accountant (CA)',
+    institution: 'Institute of Chartered Accountants of Sri Lanka (ICASL)',
+    period: '2022 - Present',
+    achievements: ['Price Winner'],
+    description: 'Completed Business Level 1 & 2, Reading Corporate Level',
+  },
+  {
+    degree: 'Advanced Level',
+    institution: 'Vidyaloka College - Galle',
+    period: '2019 - 2021',
+    gpa: '1.8764',
+    achievements: ['Top of Class', 'Top of Section', 'Subject Awards'],
+    description: 'Commerce Stream',
   },
 ];
 
 export function Education() {
   return (
-    <ParticleSection id="education" className="py-20" variant="minimal" opacity={1}>
+    <ParticleSection
+      id="education"
+      className="py-20"
+      variant="minimal"
+      opacity={1}
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
@@ -55,7 +60,7 @@ export function Education() {
                 <div
                   key={index}
                   className={`relative animate-slide-up ${
-                    index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2 md:ml-auto"
+                    index % 2 === 0 ? 'md:pr-1/2' : 'md:pl-1/2 md:ml-auto'
                   }`}
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
@@ -70,8 +75,10 @@ export function Education() {
 
                       <div className="flex-1">
                         <h3 className="text-xl font-bold mb-2">{edu.degree}</h3>
-                        <p className="text-lg text-muted-foreground mb-3">{edu.institution}</p>
-                        
+                        <p className="text-lg text-muted-foreground mb-3">
+                          {edu.institution}
+                        </p>
+
                         <div className="flex flex-wrap gap-2 mb-3">
                           <Badge variant="outline" className="gap-1">
                             <Calendar className="h-3 w-3" />
@@ -83,11 +90,16 @@ export function Education() {
                           </Badge>
                         </div>
 
-                        <p className="text-sm text-muted-foreground mb-4">{edu.description}</p>
+                        <p className="text-sm text-muted-foreground mb-4">
+                          {edu.description}
+                        </p>
 
                         <div className="flex flex-wrap gap-2">
                           {edu.achievements.map((achievement) => (
-                            <Badge key={achievement} className="bg-primary/20 text-primary border-primary/30">
+                            <Badge
+                              key={achievement}
+                              className="bg-primary/20 text-primary border-primary/30"
+                            >
                               {achievement}
                             </Badge>
                           ))}
