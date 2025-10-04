@@ -10,9 +10,9 @@ const videos = [
       'Introduction to Cloud Computing in Sinhala - Cloud Computing මුල සිට',
     description:
       'Comprehensive introduction to cloud computing concepts and services in Sinhala.',
-    videoId: 'qjbOGPp6lW0&t=117s',
+    videoId: 'qjbOGPp6lW0',
     thumbnail:
-      'https://i.ytimg.com/an_webp/qjbOGPp6lW0/mqdefault_6s.webp?du=3000&sqp=CPOogMcG&rs=AOn4CLCAlUESbpCnlh3d7987K6n0PzT89w',
+     'https://img.youtube.com/vi/qjbOGPp6lW0/hqdefault.jpg',
     date: '2025-08-29',
     duration: '8:57',
     views: '33',
@@ -50,9 +50,9 @@ const videos = [
     title: 'Introduction to AWS | සිංහලෙන් | Beginner Friendly Guide',
     description:
       'Beginner-friendly introduction to Amazon Web Services (AWS) in Sinhala.',
-    videoId: 'RR2WsOAgA7Y&t=6s',
+    videoId: 'RR2WsOAgA7Y',
     thumbnail:
-      'https://i.ytimg.com/an_webp/RR2WsOAgA7Y/mqdefault_6s.webp?du=3000&sqp=CN6kgMcG&rs=AOn4CLCfUMGjkc751GIPQG0Sv_yqrwRLyA',
+      'https://img.youtube.com/vi/RR2WsOAgA7Y/hqdefault.jpg',
     date: '2025-08-30',
     duration: '08:54',
     views: '35',
