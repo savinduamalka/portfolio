@@ -262,7 +262,7 @@ export function ParticleBackground({
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none"
+      className="absolute inset-0"
       style={{ opacity }}
     />
   );
