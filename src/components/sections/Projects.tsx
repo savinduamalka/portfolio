@@ -112,8 +112,81 @@ const projects = [
     image: '/vertex.png',
     github: 'https://github.com/savinduamalka/SpiritX_Vertex_02.git',
     demo: 'https://spirit-x-vertex-02.vercel.app',
-    category: 'AI/ML',
+    category: 'Full-Stack',
   },
+    {
+    title: 'Python Chatbot',
+    description:
+      'AI-powered chatbot using large language models with API integration.',
+    longDescription:
+      'This project is a lightweight AI chatbot built in Python that leverages large language models via API calls. It supports both OpenAI and Hugging Face models, allowing flexible integration with popular LLMs for conversational applications.',
+    tags: ['Python', 'OpenAI', 'Chatbot'],
+    image: '/chatbot.jpeg',
+    github: 'https://github.com/savinduamalka/python-chatbot.git',
+    demo: '',
+    category: 'Backend',
+  },
+    {
+    title: 'Music Blog',
+    description:
+      'Manage music albums, songs, artist, with secure login',
+    longDescription:
+      'A web application for managing music collections, allowing users to create, edit, and delete albums and songs. Features include secure user authentication, album artwork uploads, and a responsive design.',
+    tags: ['Laravel', 'MySQL'],
+    image: '/musicblog.png',
+    github: 'https://github.com/savinduamalka/music-blog-laravel.git',
+    demo: '',
+    category: 'Backend',
+  },
+  {
+    title: 'Authentication System',
+    description:
+      'Secure user authentication with JWT, password hashing.',
+    longDescription:
+      'A robust authentication system built with Node.js and Express, featuring JWT-based session management, bcrypt password hashing, and secure login and registration endpoints. Designed for easy integration into web applications.',
+    tags: ['React', 'Node','MongoDB', 'JWT'],
+    image: '/auth.png',
+    github: 'https://spirit-x-vertex-01.vercel.app',
+    demo:'https://spirit-x-vertex-01-git-main-savindu-amalkas-projects.vercel.app',
+    category: 'Full-Stack',
+  },
+    {
+    title: 'POS System- Frontend',
+    description:
+      'Signup, login, Contact us, Pos Dashboard, Products, Cart, Sales, and Cahier pages',
+    longDescription:
+      '',
+    tags: ['React', 'Tailwind'],
+    image: '/pos.png',
+    github: 'https://github.com/savinduamalka/pos-system-front-end.git',
+    demo:'https://pos-system-front-end.vercel.app',
+    category: 'Frontend',
+  },
+      {
+    title: 'Student-Marks-Manager',
+    description:
+      'A Java application for managing GDSE students marks.',
+    longDescription:
+      'A Java application for managing GDSE students marks. The project demonstrates the use of Java fundamentals. Each GDSE student has a unique student ID. In the first semester, students must complete two mandatory modules, such as Programming Fundamentals and Database Management Systems. This application tracks the exam marks for these modules at the end of the semester. There is a Command Line Interface, can enter an option to continue in this application. Here are the options that in Command Line Interface, such as Add Student, Add Marks, Update Marks, Delete Marks, Search Marks, and View All Students Marks, Print Student Ranks, Best in Programming Fundamentals',
+    tags: ['Java', 'OOP'],
+    image: '/gdse.png',
+    github: 'https://github.com/savinduamalka/GDSE-Student-Marks-Manager.git',
+    demo:'',
+    category: 'Backend',
+  },
+        {
+    title: 'Movie Finder App',
+    description:
+      'A web app to search for movies using the OMDB API.',
+    longDescription:
+      'Using the OMDB API, this app allows users to search for movie details like title, year, ratings, director name, and more, all with a sleek interface. This is a fully responsive web app that is built using HTML, CSS, and JavaScript.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'API'],
+    image: '/moviefinder.png',
+    github: 'https://github.com/savinduamalka/Movie-Finder-App.git',
+    demo:'',
+    category: 'Full-Stack',
+  }
+
 ];
 
 const categories = ['All', 'Full-Stack', 'Frontend', 'Backend', 'IoT'];
@@ -237,6 +310,7 @@ export function Projects() {
 
                   {/* Links */}
                   <div className="flex gap-2">
+                    {project.github && (
                     <Button
                       variant="ghost"
                       size="sm"
@@ -253,6 +327,8 @@ export function Projects() {
                         Code
                       </a>
                     </Button>
+                    )}
+                    {project.demo && (
                     <Button
                       variant="ghost"
                       size="sm"
@@ -269,6 +345,7 @@ export function Projects() {
                         Demo
                       </a>
                     </Button>
+                    )}
                   </div>
                 </div>
               </Card>
@@ -340,6 +417,7 @@ export function Projects() {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3">
+                  {selectedProject.demo && (
                   <Button variant="default" asChild className="flex-1">
                     <a
                       href={selectedProject.demo}
@@ -350,6 +428,8 @@ export function Projects() {
                       View Live Demo
                     </a>
                   </Button>
+                  )}
+                  {selectedProject.github && (
                   <Button variant="outline" asChild className="flex-1">
                     <a
                       href={selectedProject.github}
@@ -360,6 +440,7 @@ export function Projects() {
                       View Source Code
                     </a>
                   </Button>
+                  )}
                 </div>
               </div>
             </>
