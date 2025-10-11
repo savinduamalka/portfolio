@@ -15,7 +15,7 @@ const volunteering = [
       'Participated 5+ successful photography events, actively engaged in club activities',
     tags: ['Photography', 'Photo Editing', 'Lightroom'],
     image:
-      'https://scontent.fcmb4-2.fna.fbcdn.net/v/t39.30808-6/535371835_1331316595670880_6532678813698774562_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=f727a1&_nc_ohc=pHRENwerB7IQ7kNvwE-6egj&_nc_oc=AdmQUyS_uYnNLn64eISAhBIkNbEyJXlgh58PcU9B5_Xth_bj99_1Jz5Irc4u95fV4LTZ02hVfL1WjYosAEzQX79s&_nc_zt=23&_nc_ht=scontent.fcmb4-2.fna&_nc_gid=3kHwlmBZm7yWFPy7ZYZI8g&oh=00_AfecehrI6ONbsYx4nJmVOyhNjG3lXj_jvVUdUmvc2LSKZQ&oe=68E5D988',
+      '/fitmoment.jpeg',
   },
 ];
 

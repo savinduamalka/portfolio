@@ -18,7 +18,7 @@ import { ParticleSection } from '@/components/ParticleSection';
 
 const projects = [
   {
-    title: 'Agni Online Store (E- Commerce Web App)',
+    title: 'Agni Online Store (E- Commerce Web App)- Individual Project',
     description:
       'Developing a full-featured e-commerce platform with Google login, product filtering, cart, order tracking, OTP-based email verification, password recovery, and product reviews. Admin dashboard enables management of users, products, inventory, and orders. Payment gateway integration is in progress.',
     longDescription:
@@ -30,7 +30,7 @@ const projects = [
     category: 'Full-Stack',
   },
   {
-    title: 'Hotel Booking System- Blue Horizon Galle',
+    title: 'Hotel Booking System- Blue Horizon Galle- Individual Project',
     description:
       'Hotel booking web application with room search, booking management, and user authentication.',
     longDescription:
@@ -42,7 +42,7 @@ const projects = [
     category: 'Full-Stack',
   },
   {
-    title: 'AutoMobile SL (E- Commerce Web App)',
+    title: 'AutoMobile SL (E- Commerce Web App)- Individual Project',
     description:
       'E-commerce platform for buying and selling vehicles with user authentication and payment integration.',
     longDescription:
@@ -54,7 +54,7 @@ const projects = [
     category: 'Full-Stack',
   },
   {
-    title: 'Database and Middleware Management System',
+    title: 'Database and Middleware Management System- Group Project',
     description:
       'Tender and employee management system with secure authentication and dynamic filtering.',
     longDescription:
@@ -66,7 +66,7 @@ const projects = [
     category: 'Full-Stack',
   },
   {
-    title: 'TechBar- Automated Bartender Machine',
+    title: 'TechBar- Automated Bartender Machine- Group Project',
     description:
       'Beautiful weather app with forecasts, maps, and personalized alerts.',
     longDescription:
@@ -78,7 +78,7 @@ const projects = [
     category: 'IoT',
   },
   {
-    title: 'SkillSwap Marketplace- Ongoing',
+    title: 'SkillSwap Marketplace- Ongoing- Individual Project',
     description:
       'A platform for users to exchange skills and services, fostering community engagement and collaboration.',
     longDescription:
@@ -91,7 +91,7 @@ const projects = [
     category: 'Full-Stack',
   },
   {
-    title: 'Portfolio Website',
+    title: 'Portfolio Website- Individual Project',
     description:
       'A personal portfolio website to showcase projects and skills.',
     longDescription:
@@ -99,11 +99,11 @@ const projects = [
     tags: ['React', 'Tailwind CSS', 'Vercel'],
     image: '/portfolio.png',
     github: 'https://github.com/savinduamalka/portfolio.git',
-    demo: '',
+    demo: 'https://www.savinduamalka.app',
     category: 'Frontend',
   },
   {
-    title: 'Spirit11',
+    title: 'Spirit11- Individual Project',
     description:
       'Admin Credentials: Username: savinduamalka, Password: Savindu@123.',
     longDescription:
@@ -115,7 +115,7 @@ const projects = [
     category: 'Full-Stack',
   },
     {
-    title: 'Python Chatbot',
+    title: 'Python Chatbot- Individual Project',
     description:
       'AI-powered chatbot using large language models with API integration.',
     longDescription:
@@ -127,7 +127,7 @@ const projects = [
     category: 'Backend',
   },
     {
-    title: 'Music Blog',
+    title: 'Music Blog- Individual Project',
     description:
       'Manage music albums, songs, artist, with secure login',
     longDescription:
@@ -139,19 +139,19 @@ const projects = [
     category: 'Backend',
   },
   {
-    title: 'Authentication System',
+    title: 'Authentication System- Group Project',
     description:
       'Secure user authentication with JWT, password hashing.',
     longDescription:
       'A robust authentication system built with Node.js and Express, featuring JWT-based session management, bcrypt password hashing, and secure login and registration endpoints. Designed for easy integration into web applications.',
     tags: ['React', 'Node','MongoDB', 'JWT'],
     image: '/auth.png',
-    github: 'https://spirit-x-vertex-01.vercel.app',
-    demo:'https://spirit-x-vertex-01-git-main-savindu-amalkas-projects.vercel.app',
+    github: 'https://github.com/savinduamalka/SpiritX_Vertex_01.git',
+    demo:'https://spirit-x-vertex-01.vercel.app',
     category: 'Full-Stack',
   },
     {
-    title: 'POS System- Frontend',
+    title: 'POS System- Frontend- Individual Project',
     description:
       'Signup, login, Contact us, Pos Dashboard, Products, Cart, Sales, and Cahier pages',
     longDescription:
@@ -163,7 +163,7 @@ const projects = [
     category: 'Frontend',
   },
       {
-    title: 'Student-Marks-Manager',
+    title: 'Student-Marks-Manager- Individual Project',
     description:
       'A Java application for managing GDSE students marks.',
     longDescription:
@@ -174,8 +174,8 @@ const projects = [
     demo:'',
     category: 'Backend',
   },
-        {
-    title: 'Movie Finder App',
+  {
+    title: 'Movie Finder App- Individual Project',
     description:
       'A web app to search for movies using the OMDB API.',
     longDescription:
@@ -185,6 +185,30 @@ const projects = [
     github: 'https://github.com/savinduamalka/Movie-Finder-App.git',
     demo:'',
     category: 'Full-Stack',
+  },
+  {
+    title: 'Flamingo Web- Ongoing- Group Project',
+    description:
+      'Website for Flamingo Cafe and BYOB located in Piliyandala',
+    longDescription:
+      'Admin Dashboard home with quick stats (Reservations today, Feedback pending, Active promotions), User authentication- OAuth2 (Admin login), Simple analytics integration (visitor count, reservation numbers)',
+    tags: ['Next JS', 'MongoDB', 'Prisma', 'Cloudflare S3', 'Vercel'],
+    image: '/flamingo.png',
+    github: 'https://github.com/cafe-flamingo-Team-9x/flamingo-web.git',
+    demo: '',
+    category: 'Full-Stack',
+  },
+  {
+    title: 'Shopper- E Commerce- Individual Project',
+    description:
+      'Frontend for E-Commerce site',
+    longDescription:
+      'A comprehensive frontend for an e-commerce site built with React and Tailwind CSS. This project showcases product listings, a shopping cart, and user authentication pages.',
+    tags: ['React', 'Tailwind CSS'],
+    image: '/shopper.png',
+    github: 'https://github.com/savinduamalka/E-Commerce.git',
+    demo:'',
+    category: 'Frontend',
   }
 
 ];
