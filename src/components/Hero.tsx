@@ -82,15 +82,13 @@ export function Hero() {
       </div>
 
       {/* My Photo as background layer, fixed position, lower z-index */}
-      <div className="hidden lg:block fixed right-0 bottom-0 z-10 animate-slide-up pointer-events-none">
-        <div className="relative w-[400px] xl:w-[450px] 2xl:w-[500px] h-auto">
-          <img
-            src="/myphoto.png"
-            alt="Savindu Amalka"
-            className="w-full h-full object-contain object-bottom filter drop-shadow-2xl"
-            style={{ filter: 'drop-shadow(0 0 40px rgba(0, 0, 0, 0.3))' }}
-          />
-        </div>
+      <div className="hidden lg:block fixed right-0 bottom-0 z-10 pointer-events-none">
+        <img
+          src="/myphoto.png"
+          alt="Savindu Amalka"
+          className="w-[400px] xl:w-[450px] 2xl:w-[500px] h-auto object-contain object-bottom filter drop-shadow-2xl"
+          style={{ filter: 'drop-shadow(0 0 40px rgba(0, 0, 0, 0.3))' }}
+        />
         {/* Floating particles around photo */}
         <div
           className="absolute top-10 left-10 w-2 h-2 bg-primary rounded-full animate-float glow-box-primary"
@@ -114,8 +112,8 @@ export function Hero() {
         isActive={isHeroVisible}
       />
 
-      {/* Content in front */}
-      <div className="container mx-auto px-4 relative z-20">
+  {/* Content in front */}
+  <div className="container mx-auto px-4 relative z-20">
         {/* Centered Content */}
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           {/* Greeting */}
