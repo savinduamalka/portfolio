@@ -112,8 +112,8 @@ export function Hero() {
         isActive={isHeroVisible}
       />
 
-  {/* Content in front */}
-  <div className="container mx-auto px-4 relative z-20">
+      {/* Content in front */}
+      <div className="container mx-auto px-4 relative z-20">
         {/* Centered Content */}
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           {/* Greeting */}
