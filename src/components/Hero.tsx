@@ -1,43 +1,53 @@
+import { useMemo } from 'react';
 import { Download, Eye, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ParticleBackground } from './ParticleBackground';
 import heroSpaceBg from '@/assets/hero-space-bg.jpg';
+import { useInViewport } from '@/hooks/use-in-viewport';
 
-export function Hero() {
-  const animateText = (text: string) => {
-    const words = text.split(' ');
-    let letterIndex = 0;
-    const letters = text.replace(/ /g, '').length;
+const SUMMARY_TEXT =
+  'Enthusiastic and fast-learning IT undergraduate with a strong academic record, actively seeking an Internship to gain hands-on industry experience and apply foundational technical skills in a real-world setting. Possesses intermediate knowledge in core technologies including Linux, Docker, Git, and cloud platforms, alongside programming expertise and collaborative project work, with a keen interest in web technologies and emerging IT trends.';
 
-    return words.map((word, wordIdx) => {
-      const wordLetters = word.split('').map((letter, letterIdx) => {
-        const currentIndex = letterIndex++;
-        const animationDelay = (currentIndex / letters) * 8;
+const buildAnimatedText = (text: string) => {
+  const words = text.split(' ');
+  let letterIndex = 0;
+  const letters = text.replace(/ /g, '').length;
 
-        return (
-          <span
-            key={`${wordIdx}-${letterIdx}`}
-            className="inline-block animate-letter-wave"
-            style={{
-              animationDelay: `${animationDelay}s`,
-            }}
-          >
-            {letter}
-          </span>
-        );
-      });
+  return words.map((word, wordIdx) => {
+    const wordLetters = word.split('').map((letter, letterIdx) => {
+      const currentIndex = letterIndex++;
+      const animationDelay = (currentIndex / letters) * 8;
 
       return (
-        <span key={wordIdx} className="inline-block">
-          {wordLetters}
-          {wordIdx < words.length - 1 && <span>&nbsp;</span>}
+        <span
+          key={`${wordIdx}-${letterIdx}`}
+          className="inline-block animate-letter-wave"
+          style={{
+            animationDelay: `${animationDelay}s`,
+          }}
+        >
+          {letter}
         </span>
       );
     });
-  };
 
-  const summaryText =
-    'Enthusiastic and fast-learning IT undergraduate with a strong academic record, actively seeking an Internship to gain hands-on industry experience and apply foundational technical skills in a real-world setting. Proficient in core technologies including Linux, Docker, Git, and cloud platforms, alongside programming expertise and collaborative project work, with a keen interest in web technologies and emerging IT trends.';
+    return (
+      <span key={wordIdx} className="inline-block">
+        {wordLetters}
+        {wordIdx < words.length - 1 && <span>&nbsp;</span>}
+      </span>
+    );
+  });
+};
+
+export function Hero() {
+  const { ref: setSectionRef, isVisible: isHeroVisible } =
+    useInViewport<HTMLDivElement>({
+      threshold: 0.35,
+      rootMargin: '-10% 0px',
+    });
+
+  const animatedSummary = useMemo(() => buildAnimatedText(SUMMARY_TEXT), []);
 
   const handleViewCV = () => {
     // Open CV in new tab for viewing
@@ -59,7 +69,10 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      ref={setSectionRef}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -69,7 +82,12 @@ export function Hero() {
       </div>
 
       {/* Particle Network */}
-      <ParticleBackground variant="colorful" interactive={true} opacity={1} />
+      <ParticleBackground
+        variant="colorful"
+        interactive={isHeroVisible}
+        opacity={1}
+        isActive={isHeroVisible}
+      />
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
@@ -153,7 +171,7 @@ export function Hero() {
 
             {/* Text content with jumping letter wave animation */}
             <p className="relative leading-relaxed text-center text-muted-foreground px-4 md:px-8">
-              {animateText(summaryText)}
+              {animatedSummary}
             </p>
 
             {/* Continuous floating star particles */}

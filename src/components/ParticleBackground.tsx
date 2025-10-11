@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface Particle {
   x: number;
@@ -16,6 +16,7 @@ interface ParticleBackgroundProps {
   interactive?: boolean;
   showConnections?: boolean;
   opacity?: number;
+  isActive?: boolean;
 }
 
 export function ParticleBackground({
@@ -23,42 +24,112 @@ export function ParticleBackground({
   interactive = true,
   showConnections = true,
   opacity = 0.8,
+  isActive = true,
 }: ParticleBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: 0, y: 0, isActive: false });
   const animationFrameRef = useRef<number>();
+  const dimensionsRef = useRef({ width: 0, height: 0 });
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
+    if (typeof window === 'undefined' || !('matchMedia' in window)) {
+      return false;
+    }
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  });
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('matchMedia' in window)) {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const handleChange = (event: MediaQueryListEvent) => {
+      setPrefersReducedMotion(event.matches);
+    };
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange);
+    } else {
+      // Safari < 14
+      mediaQuery.addListener(handleChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', handleChange);
+      } else {
+        mediaQuery.removeListener(handleChange);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas) {
+      return;
+    }
 
     const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+    if (!ctx) {
+      return;
+    }
+
+    const stopAnimation = () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = undefined;
+      }
+    };
+
+    if (!isActive || prefersReducedMotion) {
+      stopAnimation();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      return;
+    }
 
     // Responsive particle count based on variant
     const isMobile = window.innerWidth < 768;
     const particleCounts = {
-      default: isMobile ? 30 : 80,
-      colorful: isMobile ? 40 : 100,
-      minimal: isMobile ? 15 : 40,
-      dense: isMobile ? 50 : 150,
+      default: isMobile ? 28 : 70,
+      colorful: isMobile ? 34 : 85,
+      minimal: isMobile ? 12 : 32,
+      dense: isMobile ? 38 : 95,
     };
     const particleCount = particleCounts[variant];
-    const maxDistance = isMobile ? 100 : 150;
+    const maxDistance = isMobile ? 90 : 130;
+
+    const updateCanvasDimensions = () => {
+      const parentBounds =
+        canvas.parentElement?.getBoundingClientRect() ??
+        ({ width: window.innerWidth, height: window.innerHeight } as const);
+      const dpr = window.devicePixelRatio || 1;
+      dimensionsRef.current = {
+        width: Math.max(parentBounds.width, 1),
+        height: Math.max(parentBounds.height, 1),
+      };
+
+      const { width, height } = dimensionsRef.current;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
 
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      updateCanvasDimensions();
     };
 
     const initParticles = () => {
       particlesRef.current = [];
+      const { width, height } = dimensionsRef.current;
+      if (!width || !height) {
+        return;
+      }
       for (let i = 0; i < particleCount; i++) {
         const speed = variant === 'minimal' ? 0.3 : 0.5;
         particlesRef.current.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
+          x: Math.random() * width,
+          y: Math.random() * height,
           vx: (Math.random() - 0.5) * speed,
           vy: (Math.random() - 0.5) * speed,
           radius:
@@ -81,19 +152,28 @@ export function ParticleBackground({
     };
 
     const animate = () => {
-      if (!ctx || !canvas) return;
+      const { width, height } = dimensionsRef.current;
+      if (!width || !height) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+        return;
+      }
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, width, height);
 
       // Reset connection counts
       particlesRef.current.forEach((p) => (p.connections = 0));
+
+      const now = Date.now() * 0.001;
 
       // Update and draw particles
       particlesRef.current.forEach((particle, i) => {
         // Mouse interaction (attraction and repulsion)
         if (interactive && mouseRef.current.isActive) {
-          const dx = mouseRef.current.x - particle.x;
-          const dy = mouseRef.current.y - particle.y;
+          const rect = canvas.getBoundingClientRect();
+          const mouseX = mouseRef.current.x - rect.left;
+          const mouseY = mouseRef.current.y - rect.top;
+          const dx = mouseX - particle.x;
+          const dy = mouseY - particle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 200) {
@@ -130,18 +210,18 @@ export function ParticleBackground({
         }
 
         // Boundaries with smooth bounce
-        if (particle.x < 0 || particle.x > canvas.width) {
+        if (particle.x < 0 || particle.x > width) {
           particle.vx *= -0.8;
-          particle.x = Math.max(0, Math.min(canvas.width, particle.x));
+          particle.x = Math.max(0, Math.min(width, particle.x));
         }
-        if (particle.y < 0 || particle.y > canvas.height) {
+        if (particle.y < 0 || particle.y > height) {
           particle.vy *= -0.8;
-          particle.y = Math.max(0, Math.min(canvas.height, particle.y));
+          particle.y = Math.max(0, Math.min(height, particle.y));
         }
 
         // Animate opacity for twinkling effect
         if (variant === 'colorful') {
-          particle.opacity = 0.5 + Math.sin(Date.now() * 0.001 + i) * 0.3;
+          particle.opacity = 0.5 + Math.sin(now + i) * 0.3;
           particle.hue = (particle.hue + 0.1) % 360;
         }
 
@@ -225,45 +305,43 @@ export function ParticleBackground({
 
     resizeCanvas();
     initParticles();
-    window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('resize', initParticles); // Reinit particles on resize
+    const handleResize = () => {
+      resizeCanvas();
+      initParticles();
+    };
+    window.addEventListener('resize', handleResize);
     if (interactive) {
       window.addEventListener('mousemove', handleMouseMove);
       canvas.addEventListener('mouseleave', handleMouseLeave);
     }
-    animate();
+    animationFrameRef.current = requestAnimationFrame(animate);
 
     // Pause when tab not visible
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        if (animationFrameRef.current) {
-          cancelAnimationFrame(animationFrameRef.current);
-        }
-      } else {
-        animate();
+        stopAnimation();
+      } else if (!animationFrameRef.current) {
+        animationFrameRef.current = requestAnimationFrame(animate);
       }
     };
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('resize', initParticles);
+      stopAnimation();
+      window.removeEventListener('resize', handleResize);
       if (interactive) {
         window.removeEventListener('mousemove', handleMouseMove);
         canvas.removeEventListener('mouseleave', handleMouseLeave);
       }
       document.removeEventListener('visibilitychange', handleVisibilityChange);
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
     };
-  }, [variant, interactive, showConnections]);
+  }, [variant, interactive, showConnections, isActive, prefersReducedMotion]);
 
   return (
     <canvas
       ref={canvasRef}
       className="absolute inset-0"
-      style={{ opacity }}
+      style={{ opacity, pointerEvents: 'none' }}
     />
   );
 }
