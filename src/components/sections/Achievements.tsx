@@ -14,9 +14,9 @@ const achievements = [
     description:
       'Fundamental knowledge of AWS Cloud concepts, services, and security',
     certificate:
-      'https://media.licdn.com/dms/image/v2/D562DAQHsJr_YK8_f-w/profile-treasury-document-cover-images_480/B56Zj2KUudG0BY-/0/1756476560576?e=1760122800&v=beta&t=pa2tR7DC_8vqoi0sZvcstiPeR3N-gcNd4NgnN95O1Dg',
+      'https://media.licdn.com/dms/image/v2/D562DAQHsJr_YK8_f-w/profile-treasury-document-cover-images_480/B56Zj2KUudG0BY-/0/1756476560576?e=1760774400&v=beta&t=ZzVoBLp4hIs4ea6YTDbddBHE8tWByksW5Yz20nVbMXQ',
     badge:
-      'https://media.licdn.com/dms/image/v2/D562DAQHsJr_YK8_f-w/profile-treasury-document-cover-images_480/B56Zj2KUudG0BY-/0/1756476560576?e=1760122800&v=beta&t=pa2tR7DC_8vqoi0sZvcstiPeR3N-gcNd4NgnN95O1Dg',
+      'https://media.licdn.com/dms/image/v2/D562DAQHsJr_YK8_f-w/profile-treasury-document-cover-images_480/B56Zj2KUudG0BY-/0/1756476560576?e=1760774400&v=beta&t=ZzVoBLp4hIs4ea6YTDbddBHE8tWByksW5Yz20nVbMXQ',
   },
   {
     title: 'AWS Educate Introduction to Cloud 101',

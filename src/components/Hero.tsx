@@ -91,8 +91,8 @@ export function Hero() {
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
-        {/* Photo in Corner - Fixed Position */}
-        <div className="hidden lg:block fixed right-0 bottom-0 z-20 animate-slide-up">
+        {/* Photo in Corner - Absolute Behind Content */}
+        <div className="hidden lg:block absolute right-0 bottom-0 z-0 animate-slide-up pointer-events-none select-none">
           <div className="relative">
             {/* Photo */}
             <div className="relative w-[400px] xl:w-[450px] 2xl:w-[500px] h-auto">
@@ -101,6 +101,7 @@ export function Hero() {
                 alt="Savindu Amalka"
                 className="w-full h-full object-contain object-bottom filter drop-shadow-2xl"
                 style={{ filter: 'drop-shadow(0 0 40px rgba(0, 0, 0, 0.3))' }}
+                draggable={false}
               />
             </div>
 
