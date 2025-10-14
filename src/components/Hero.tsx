@@ -69,13 +69,49 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      ref={(el) => setSectionRef(el as HTMLDivElement | null)}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroSpaceBg})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+      </div>
+
+      {/* Decorative Photo (fixed, behind content layer) */}
+      <div
+        className="hidden lg:block fixed right-0 bottom-0 z-0 pointer-events-none select-none animate-slide-up"
+        aria-hidden="true"
+      >
+        <div className="relative">
+          {/* Photo */}
+          <div className="relative w-[360px] xl:w-[420px] 2xl:w-[460px] h-auto opacity-90">
+            <img
+              src="/myphoto.png"
+              alt=""
+              className="w-full h-full object-contain object-bottom drop-shadow-2xl"
+              style={{ filter: 'drop-shadow(0 0 32px rgba(0,0,0,0.25))' }}
+              aria-hidden="true"
+            />
+          </div>
+
+          {/* Floating particles around photo (also behind content) */}
+          <div
+            className="absolute top-10 left-10 w-2 h-2 bg-primary/70 rounded-full animate-float glow-box-primary"
+            style={{ animationDuration: '3s', animationDelay: '0s' }}
+          />
+          <div
+            className="absolute top-20 right-20 w-1.5 h-1.5 bg-neon-secondary/70 rounded-full animate-float glow-box-secondary"
+            style={{ animationDuration: '4s', animationDelay: '1s' }}
+          />
+          <div
+            className="absolute bottom-32 left-16 w-2.5 h-2.5 bg-primary/70 rounded-full animate-float glow-box-primary"
+            style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}
+          />
+        </div>
       </div>
 
       {/* Particle Network */}
@@ -86,37 +122,8 @@ export function Hero() {
         isActive={isHeroVisible}
       />
 
-      {/* Content */}
+      {/* Content (higher stacking context) */}
       <div className="container mx-auto px-4 relative z-10">
-        {/* Photo in Corner - Fixed Position */}
-        <div className="hidden lg:block fixed right-0 bottom-0 z-20 animate-slide-up">
-          <div className="relative">
-            {/* Photo */}
-            <div className="relative w-[400px] xl:w-[450px] 2xl:w-[500px] h-auto">
-              <img
-                src="/myphoto.png"
-                alt="Savindu Amalka"
-                className="w-full h-full object-contain object-bottom filter drop-shadow-2xl"
-                style={{ filter: 'drop-shadow(0 0 40px rgba(0, 0, 0, 0.3))' }}
-              />
-            </div>
-
-            {/* Floating particles around photo */}
-            <div
-              className="absolute top-10 left-10 w-2 h-2 bg-primary rounded-full animate-float glow-box-primary"
-              style={{ animationDuration: '3s', animationDelay: '0s' }}
-            />
-            <div
-              className="absolute top-20 right-20 w-1.5 h-1.5 bg-neon-secondary rounded-full animate-float glow-box-secondary"
-              style={{ animationDuration: '4s', animationDelay: '1s' }}
-            />
-            <div
-              className="absolute bottom-32 left-16 w-2.5 h-2.5 bg-primary rounded-full animate-float glow-box-primary"
-              style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}
-            />
-          </div>
-        </div>
-
         {/* Centered Content */}
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           {/* Greeting */}
