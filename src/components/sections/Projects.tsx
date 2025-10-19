@@ -192,7 +192,7 @@ const projects = [
       'Website for Flamingo Cafe and BYOB located in Piliyandala',
     longDescription:
       'Admin Dashboard home with quick stats (Reservations today, Feedback pending, Active promotions), User authentication- OAuth2 (Admin login), Simple analytics integration (visitor count, reservation numbers)',
-    tags: ['Next JS', 'MongoDB', 'Prisma', 'Cloudflare S3', 'Vercel'],
+    tags: ['Next JS', 'MongoDB', 'Prisma', 'Google Analytics','Cloudflare S3', 'Vercel'],
     image: '/flamingo.png',
     github: 'https://github.com/cafe-flamingo-Team-9x/flamingo-web.git',
     demo: '',
@@ -208,6 +208,19 @@ const projects = [
     image: '/shopper.png',
     github: 'https://github.com/savinduamalka/E-Commerce.git',
     demo:'',
+    category: 'Frontend',
+  },
+
+  {
+    title: 'Agni Bookshop- Individual Project- Ongoing',
+    description:
+      'Static marketing website for a bookshop',
+    longDescription:
+      'A static marketing website for Agni Bookshop & Communication built with React and Tailwind CSS. The site features a hero page, services, gallery items, and contact us to showcase the bookshop\'s offerings.',
+    tags: ['React', 'Google Analytics', 'Tailwind CSS','Radix UI','Vercel'],
+    image: '/agnibookshop.png',
+    github: 'https://github.com/savinduamalka/agni-bookshop.git',
+    demo:'https://agni-bookshop.vercel.app/',
     category: 'Frontend',
   }
 
