@@ -449,16 +449,17 @@ export function Projects() {
                 </DialogDescription>
               </DialogHeader>
 
-              <div className="space-y-6">
+              <div className="space-y-6 w-full max-w-full overflow-x-hidden">
                 {/* Project Image */}
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full max-w-full h-64 object-cover rounded-lg"
+                  style={{ maxWidth: '100%' }}
                 />
 
                 {/* Full Description */}
-                <div>
+                <div className="break-words">
                   <h3 className="text-lg font-semibold mb-2">
                     About this project
                   </h3>
@@ -477,6 +478,7 @@ export function Projects() {
                       <Badge
                         key={tag}
                         className="bg-primary/20 text-primary border-primary/30"
+                        style={{ wordBreak: 'break-word' }}
                       >
                         {tag}
                       </Badge>
@@ -485,13 +487,18 @@ export function Projects() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3">
+                <div className="flex flex-col sm:flex-row gap-3 w-full">
                   {selectedProject.demo && (
-                    <Button variant="default" asChild className="flex-1">
+                    <Button
+                      variant="default"
+                      asChild
+                      className="flex-1 min-w-0"
+                    >
                       <a
                         href={selectedProject.demo}
                         target="_blank"
                         rel="noopener noreferrer"
+                        style={{ minWidth: 0 }}
                       >
                         <ExternalLink className="h-4 w-4 mr-2" />
                         View Live Demo
@@ -499,11 +506,16 @@ export function Projects() {
                     </Button>
                   )}
                   {selectedProject.github && (
-                    <Button variant="outline" asChild className="flex-1">
+                    <Button
+                      variant="outline"
+                      asChild
+                      className="flex-1 min-w-0"
+                    >
                       <a
                         href={selectedProject.github}
                         target="_blank"
                         rel="noopener noreferrer"
+                        style={{ minWidth: 0 }}
                       >
                         <Github className="h-4 w-4 mr-2" />
                         View Source Code
