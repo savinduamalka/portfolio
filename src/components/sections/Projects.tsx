@@ -88,6 +88,25 @@ const projects = [
     category: 'Full-Stack',
   },
   {
+    title: 'Cafe Flamingo- Group Project',
+    description:
+      'Flamingo is a full-stack restaurant management and customer engagement platform designed to unify the restaurant’s online and operational workflows.',
+    longDescription:
+      'I led the development of key client-facing and administrative functionalities of the Flamingo platform. I implemented secure Google Account login for admin users using NextAuth, enabling smooth and modern authentication. I developed the dynamic menu management system—including adding, editing, hiding, reordering, and instantly updating menu items on the live website—fully connected to MongoDB. I also built the gallery management module, allowing admins to upload, manage, and publish restaurant moments displayed beautifully on the public gallery page. To enhance SEO and performance, I implemented lazy loading for images, optimized page structure with semantic header tags (About, Menu, Gallery, Contact), and ensured full mobile responsiveness across all pages. Additionally,',
+    tags: [
+      'Next JS',
+      'MongoDB',
+      'Prisma',
+      'Google Analytics',
+      'Supabase Storage',
+      'Vercel',
+    ],
+    image: '/flamingo.png',
+    github: 'https://github.com/orgs/cafe-flamingo-Team-9x/repositories',
+    demo: 'https://flamingo-one.vercel.app/',
+    category: 'Full-Stack',
+  },
+  {
     title: 'TechBar- Automated Bartender Machine- Group Project',
     description:
       'Beautiful weather app with forecasts, maps, and personalized alerts.',
@@ -204,22 +223,15 @@ const projects = [
     category: 'Full-Stack',
   },
   {
-    title: 'Flamingo Web- Ongoing- Group Project',
-    description: 'Website for Flamingo Cafe and BYOB located in Piliyandala',
+    title: 'LPG Engineering Services- Group Project',
+    description:
+      'A web application frontend for managing LPG services, including customer management, service scheduling, and inventory tracking.',
     longDescription:
-      'Admin Dashboard home with quick stats (Reservations today, Feedback pending, Active promotions), User authentication- OAuth2 (Admin login), Simple analytics integration (visitor count, reservation numbers)',
-    tags: [
-      'Next JS',
-      'MongoDB',
-      'Prisma',
-      'Google Analytics',
-      'Cloudflare S3',
-      'Vercel',
-    ],
-    image: '/flamingo.png',
-    github: 'https://github.com/cafe-flamingo-Team-9x/flamingo-web.git',
-    demo: '',
-    category: 'Full-Stack',
+      'A comprehensive web application frontend for managing LPG services, including customer management, service scheduling, and inventory tracking. The system features secure authentication, role-based access control, and a user-friendly interface for both customers, employees and administrators.',
+    tags: ['React', 'Tailwind CSS', 'Shadcn UI'],
+    image: '/mis.jpeg',
+    github: 'https://github.com/VishwaJaya01/mis-erp-frontend.git',
+    category: 'Frontend',
   },
   {
     title: 'Shopper- E Commerce- Individual Project',
