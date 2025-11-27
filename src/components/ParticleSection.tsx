@@ -54,10 +54,8 @@ export function ParticleSection({
         />
       )}
 
-      {/* Content always renders */}
-      <div>
-        {children}
-      </div>
+      {/* Lazy render content only when visible */}
+      {hasEntered && <div>{children}</div>}
     </section>
   );
 }
