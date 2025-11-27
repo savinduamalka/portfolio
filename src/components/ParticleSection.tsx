@@ -40,8 +40,7 @@ export function ParticleSection({
       ref={ref}
       className={cn(
         'relative overflow-hidden transition-all duration-700 ease-out transform-gpu will-change-transform',
-        className,
-        hasEntered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+        className
       )}
     >
       {/* Particle Network Background */}
@@ -55,13 +54,8 @@ export function ParticleSection({
         />
       )}
 
-      {/* Content */}
-      <div
-        className={cn(
-          'relative z-10 transition-all duration-700 ease-out transform-gpu will-change-transform',
-          hasEntered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-        )}
-      >
+      {/* Content always renders */}
+      <div>
         {children}
       </div>
     </section>
