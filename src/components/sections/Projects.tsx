@@ -66,6 +66,28 @@ const projects = [
     category: 'Full-Stack',
   },
   {
+    title:
+      'Microservices-based Automobile Service Management System- Group Project',
+    description:
+      'A microservices-based automobile service management system designed to streamline vehicle servicing, appointment scheduling, customer interactions, and real-time service tracking.',
+    longDescription:
+      'Designed and developed the Customer Service microservice responsible for managing user profiles and vehicle data. Implemented secure user profile update/delete functionality alongside validated vehicle CRUD operations, enforcing VIN and license-plate uniqueness per customer. Integrated the service into the system’s event-driven architecture by publishing vehicle lifecycle events via RabbitMQ and consuming authentication events to auto-provision customer profiles. Containerized the microservice using Docker for streamlined deployment and developed unit tests to ensure reliability, correctness, and code quality.',
+    tags: [
+      'Spring Boot',
+      'React',
+      'PostgreSQL',
+      'RabbitMQ',
+      'Spring Cloud Eureka',
+      'Spring Cloud Gateway',
+      'Docker',
+      'JUnit & Mockito',
+      'Maven',
+    ],
+    image: '/autonova.jpeg',
+    github: 'https://github.com/orgs/void-squad/repositories',
+    category: 'Full-Stack',
+  },
+  {
     title: 'TechBar- Automated Bartender Machine- Group Project',
     description:
       'Beautiful weather app with forecasts, maps, and personalized alerts.',
@@ -114,7 +136,7 @@ const projects = [
     demo: 'https://spirit-x-vertex-02.vercel.app',
     category: 'Full-Stack',
   },
-    {
+  {
     title: 'Python Chatbot- Individual Project',
     description:
       'AI-powered chatbot using large language models with API integration.',
@@ -126,10 +148,9 @@ const projects = [
     demo: '',
     category: 'Backend',
   },
-    {
+  {
     title: 'Music Blog- Individual Project',
-    description:
-      'Manage music albums, songs, artist, with secure login',
+    description: 'Manage music albums, songs, artist, with secure login',
     longDescription:
       'A web application for managing music collections, allowing users to create, edit, and delete albums and songs. Features include secure user authentication, album artwork uploads, and a responsive design.',
     tags: ['Laravel', 'MySQL'],
@@ -140,59 +161,61 @@ const projects = [
   },
   {
     title: 'Authentication System- Group Project',
-    description:
-      'Secure user authentication with JWT, password hashing.',
+    description: 'Secure user authentication with JWT, password hashing.',
     longDescription:
       'A robust authentication system built with Node.js and Express, featuring JWT-based session management, bcrypt password hashing, and secure login and registration endpoints. Designed for easy integration into web applications.',
-    tags: ['React', 'Node','MongoDB', 'JWT'],
+    tags: ['React', 'Node', 'MongoDB', 'JWT'],
     image: '/auth.png',
     github: 'https://github.com/savinduamalka/SpiritX_Vertex_01.git',
-    demo:'https://spirit-x-vertex-01.vercel.app',
+    demo: 'https://spirit-x-vertex-01.vercel.app',
     category: 'Full-Stack',
   },
-    {
+  {
     title: 'POS System- Frontend- Individual Project',
     description:
       'Signup, login, Contact us, Pos Dashboard, Products, Cart, Sales, and Cahier pages',
-    longDescription:
-      '',
+    longDescription: '',
     tags: ['React', 'Tailwind'],
     image: '/pos.png',
     github: 'https://github.com/savinduamalka/pos-system-front-end.git',
-    demo:'https://pos-system-front-end.vercel.app',
+    demo: 'https://pos-system-front-end.vercel.app',
     category: 'Frontend',
   },
-      {
+  {
     title: 'Student-Marks-Manager- Individual Project',
-    description:
-      'A Java application for managing GDSE students marks.',
+    description: 'A Java application for managing GDSE students marks.',
     longDescription:
       'A Java application for managing GDSE students marks. The project demonstrates the use of Java fundamentals. Each GDSE student has a unique student ID. In the first semester, students must complete two mandatory modules, such as Programming Fundamentals and Database Management Systems. This application tracks the exam marks for these modules at the end of the semester. There is a Command Line Interface, can enter an option to continue in this application. Here are the options that in Command Line Interface, such as Add Student, Add Marks, Update Marks, Delete Marks, Search Marks, and View All Students Marks, Print Student Ranks, Best in Programming Fundamentals',
     tags: ['Java', 'OOP'],
     image: '/gdse.png',
     github: 'https://github.com/savinduamalka/GDSE-Student-Marks-Manager.git',
-    demo:'',
+    demo: '',
     category: 'Backend',
   },
   {
     title: 'Movie Finder App- Individual Project',
-    description:
-      'A web app to search for movies using the OMDB API.',
+    description: 'A web app to search for movies using the OMDB API.',
     longDescription:
       'Using the OMDB API, this app allows users to search for movie details like title, year, ratings, director name, and more, all with a sleek interface. This is a fully responsive web app that is built using HTML, CSS, and JavaScript.',
     tags: ['HTML', 'CSS', 'JavaScript', 'API'],
     image: '/moviefinder.png',
     github: 'https://github.com/savinduamalka/Movie-Finder-App.git',
-    demo:'',
+    demo: '',
     category: 'Full-Stack',
   },
   {
     title: 'Flamingo Web- Ongoing- Group Project',
-    description:
-      'Website for Flamingo Cafe and BYOB located in Piliyandala',
+    description: 'Website for Flamingo Cafe and BYOB located in Piliyandala',
     longDescription:
       'Admin Dashboard home with quick stats (Reservations today, Feedback pending, Active promotions), User authentication- OAuth2 (Admin login), Simple analytics integration (visitor count, reservation numbers)',
-    tags: ['Next JS', 'MongoDB', 'Prisma', 'Google Analytics','Cloudflare S3', 'Vercel'],
+    tags: [
+      'Next JS',
+      'MongoDB',
+      'Prisma',
+      'Google Analytics',
+      'Cloudflare S3',
+      'Vercel',
+    ],
     image: '/flamingo.png',
     github: 'https://github.com/cafe-flamingo-Team-9x/flamingo-web.git',
     demo: '',
@@ -200,30 +223,27 @@ const projects = [
   },
   {
     title: 'Shopper- E Commerce- Individual Project',
-    description:
-      'Frontend for E-Commerce site',
+    description: 'Frontend for E-Commerce site',
     longDescription:
       'A comprehensive frontend for an e-commerce site built with React and Tailwind CSS. This project showcases product listings, a shopping cart, and user authentication pages.',
     tags: ['React', 'Tailwind CSS'],
     image: '/shopper.png',
     github: 'https://github.com/savinduamalka/E-Commerce.git',
-    demo:'',
+    demo: '',
     category: 'Frontend',
   },
 
   {
     title: 'Agni Bookshop- Individual Project- Ongoing',
-    description:
-      'Static marketing website for a bookshop',
+    description: 'Static marketing website for a bookshop',
     longDescription:
-      'A static marketing website for Agni Bookshop & Communication built with React and Tailwind CSS. The site features a hero page, services, gallery items, and contact us to showcase the bookshop\'s offerings.',
-    tags: ['React', 'Google Analytics', 'Tailwind CSS','Radix UI','Vercel'],
+      "A static marketing website for Agni Bookshop & Communication built with React and Tailwind CSS. The site features a hero page, services, gallery items, and contact us to showcase the bookshop's offerings.",
+    tags: ['React', 'Google Analytics', 'Tailwind CSS', 'Radix UI', 'Vercel'],
     image: '/agnibookshop.png',
     github: 'https://github.com/savinduamalka/agni-bookshop.git',
-    demo:'https://agni-bookshop.vercel.app/',
+    demo: 'https://agni-bookshop.vercel.app/',
     category: 'Frontend',
-  }
-
+  },
 ];
 
 const categories = ['All', 'Full-Stack', 'Frontend', 'Backend', 'IoT'];
@@ -348,40 +368,40 @@ export function Projects() {
                   {/* Links */}
                   <div className="flex gap-2">
                     {project.github && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      asChild
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex-1"
-                    >
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        asChild
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex-1"
                       >
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="h-4 w-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
                     )}
                     {project.demo && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      asChild
-                      onClick={(e) => e.stopPropagation()}
-                      className="flex-1"
-                    >
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        asChild
+                        onClick={(e) => e.stopPropagation()}
+                        className="flex-1"
                       >
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Demo
-                      </a>
-                    </Button>
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          Demo
+                        </a>
+                      </Button>
                     )}
                   </div>
                 </div>
@@ -455,28 +475,28 @@ export function Projects() {
                 {/* Action Buttons */}
                 <div className="flex gap-3">
                   {selectedProject.demo && (
-                  <Button variant="default" asChild className="flex-1">
-                    <a
-                      href={selectedProject.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      View Live Demo
-                    </a>
-                  </Button>
+                    <Button variant="default" asChild className="flex-1">
+                      <a
+                        href={selectedProject.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        View Live Demo
+                      </a>
+                    </Button>
                   )}
                   {selectedProject.github && (
-                  <Button variant="outline" asChild className="flex-1">
-                    <a
-                      href={selectedProject.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="h-4 w-4 mr-2" />
-                      View Source Code
-                    </a>
-                  </Button>
+                    <Button variant="outline" asChild className="flex-1">
+                      <a
+                        href={selectedProject.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github className="h-4 w-4 mr-2" />
+                        View Source Code
+                      </a>
+                    </Button>
                   )}
                 </div>
               </div>
