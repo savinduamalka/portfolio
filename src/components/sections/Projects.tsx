@@ -18,6 +18,104 @@ import { ParticleSection } from '@/components/ParticleSection';
 
 const projects = [
   {
+    title: 'Comfort Core – Deterministic Weather Index Engine',
+    description:
+      'Comfort Core is a full-stack weather analytics platform that aggregates raw meteorological data to compute a deterministic "Comfort Index" (0–100) for global cities. Unlike standard weather apps that display raw metrics, this engine synthesizes temperature, humidity, wind, and cloud cover into a single, human-centric score, utilizing a server-side heuristic algorithm.',
+    longDescription: (
+      <div className="space-y-4">
+        <p>
+          Comfort Core is a full-stack weather analytics platform that
+          aggregates raw meteorological data to compute a deterministic "Comfort
+          Index" (0–100) for global cities. Unlike standard weather apps that
+          display raw metrics, this engine synthesizes temperature, humidity,
+          wind, and cloud cover into a single, human-centric score, utilizing a
+          server-side heuristic algorithm.
+        </p>
+        <div>
+          <h4 className="font-semibold mb-2">
+            Core Architecture & Engineering Highlights:
+          </h4>
+          <ul className="list-disc pl-5 space-y-2">
+            <li>
+              <span className="font-medium">Custom Comfort Algorithm:</span>{' '}
+              Designed a weighted heuristic system that prioritizes human
+              physiological comfort. The algorithm utilizes Gaussian
+              distribution curves (for temperature falloff) and linear penalty
+              models (for wind/humidity). It features "Graceful Degradation,"
+              automatically re-weighting parameters if specific weather data
+              points are missing from the upstream API to ensure service
+              continuity. (For the detailed mathematical formulas and logic,
+              please refer to the Repository Description.)
+            </li>
+            <li>
+              <span className="font-medium">Hybrid Caching Strategy:</span>{' '}
+              Implemented a dual-branch caching architecture to balance
+              development speed and production scalability:
+              <ul className="list-[circle] pl-5 mt-1 space-y-1">
+                <li>
+                  <span className="font-medium">Development:</span> In-memory
+                  Map structures for zero-dependency local setups.
+                </li>
+                <li>
+                  <span className="font-medium">Production:</span> Integrated
+                  Upstash Redis (Global Database) for distributed, persistent
+                  caching with TTL management. This reduces API costs and
+                  latency by caching raw payloads, computed rankings, and
+                  processed forecasts independently.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-medium">Advanced Security (Auth0):</span>{' '}
+              Secured via Auth0 with a dual-authentication mechanism:
+              <ul className="list-[circle] pl-5 mt-1 space-y-1">
+                <li>
+                  <span className="font-medium">Browser:</span> HTTP-only
+                  session cookies for secure frontend access.
+                </li>
+                <li>
+                  <span className="font-medium">API:</span> Bearer Token
+                  validation for external clients (e.g., Postman), enabling
+                  seamless headless testing.
+                </li>
+                <li>
+                  Implemented custom Auth0 Actions to enforce specific MFA
+                  strategies.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-medium">Dashboard & Visualization:</span>{' '}
+              Built a responsive UI with Next.js and Recharts. Features include
+              an interactive leaderboard, searching/sorting (by rank, score, or
+              name), and 5-day temperature trend visualization.
+            </li>
+            <li>
+              <span className="font-medium">Testing & Quality:</span> Achieved
+              robust code reliability using Vitest, covering unit tests for
+              ideal conditions, storm penalties, and edge cases involving
+              missing data types.
+            </li>
+          </ul>
+        </div>
+      </div>
+    ),
+    tags: [
+      'Upstash Redis',
+      'Vitest',
+      'Next.js',
+      'TypeScript',
+      'Auth0',
+      'OpenWeatherMap API',
+      'Recharts',
+      'Tailwind CSS',
+    ],
+    image: '/comfort-core.png',
+    github: 'https://github.com/savinduamalka/comfort-core.git',
+    demo: 'https://comfort-core.vercel.app',
+    category: 'Full-Stack',
+  },
+  {
     title: 'Agni Online Store (E- Commerce Web App)- Individual Project',
     description:
       'Developing a full-featured e-commerce platform with Google login, product filtering, cart, order tracking, OTP-based email verification, password recovery, and product reviews. Admin dashboard enables management of users, products, inventory, and orders. Payment gateway integration is in progress.',
@@ -463,9 +561,9 @@ export function Projects() {
                   <h3 className="text-lg font-semibold mb-2">
                     About this project
                   </h3>
-                  <p className="text-muted-foreground">
+                  <div className="text-muted-foreground">
                     {selectedProject.longDescription}
-                  </p>
+                  </div>
                 </div>
 
                 {/* Technologies */}
